@@ -1,0 +1,4 @@
+baseURL = 'https://voyager314.github.io/'
+locale = 'zh-cn'
+title = 'blog of voyager314'
+theme = 'PaperMod'
