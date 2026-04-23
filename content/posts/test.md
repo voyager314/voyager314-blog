@@ -25,7 +25,7 @@ title = 'Test'
   on:
     push:
       branches:
-        - main
+        - main #改成自己的blog仓库分支
   
   jobs:
     build-deploy:
