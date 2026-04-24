@@ -1,0 +1,14 @@
+{{- $pages := slice -}}
+{{- range site.RegularPages -}}
+    {{- if and (not .Params.searchHidden) (ne .Layout `archives`) (ne .Layout `search`) -}}
+        {{- $pages = $pages | append (dict
+            "title"       .Title
+            "content"     .Plain
+            "permalink"   .Permalink
+            "summary"     (.Summary | plainify)
+            "date"        (dateFormat "Jan 2, 2006" .Date)
+            "readingTime" .ReadingTime
+        ) -}}
+    {{- end -}}
+{{- end -}}
+{{- $pages | jsonify -}}

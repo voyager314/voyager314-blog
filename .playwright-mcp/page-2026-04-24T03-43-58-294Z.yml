@@ -1,0 +1,51 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - navigation [ref=e3]:
+      - generic [ref=e4]:
+        - link "Blog of Voyager314" [ref=e5] [cursor=pointer]:
+          - /url: http://localhost:1313/
+        - button "Toggle theme" [ref=e7] [cursor=pointer]:
+          - img [ref=e8]
+      - list [ref=e14]:
+        - listitem [ref=e15]:
+          - link "Posts" [ref=e16] [cursor=pointer]:
+            - /url: http://localhost:1313/posts/
+        - listitem [ref=e17]:
+          - link "Archive" [ref=e18] [cursor=pointer]:
+            - /url: http://localhost:1313/archives/
+        - listitem [ref=e19]:
+          - link "Search" [ref=e20] [cursor=pointer]:
+            - /url: http://localhost:1313/search/
+        - listitem [ref=e21]:
+          - link "Tags" [ref=e22] [cursor=pointer]:
+            - /url: http://localhost:1313/tags/
+  - main [ref=e23]:
+    - article [ref=e24]:
+      - heading "👋 Welcome to Voyager314’s Blog" [level=1] [ref=e26]
+      - paragraph [ref=e28]: Hi, I’m Voyager314. I write about programming, technology, and things I’m learning. Feel free to explore!
+      - generic [ref=e30]:
+        - link "Github" [ref=e31] [cursor=pointer]:
+          - /url: https://github.com/voyager314
+          - img [ref=e32]
+        - link "Rss" [ref=e33] [cursor=pointer]:
+          - /url: /index.xml
+          - img [ref=e34]
+    - article [ref=e38]:
+      - heading "Test" [level=2] [ref=e40]
+      - paragraph [ref=e42]: 测试一下博客 这是我的第一篇博客，目前还没想好写什么。 这是用hugo+github的静态页面托管构建的： 创建两个仓库：username/username.github.io(同时也是用于访问博客的域名)，blog(或者其它名字也行) ...
+      - generic [ref=e43]: April 23, 2026 · 2 min
+      - link "post link to Test":
+        - /url: http://localhost:1313/posts/test/
+  - contentinfo [ref=e44]:
+    - generic [ref=e45]:
+      - text: © 2026
+      - link "Blog of Voyager314" [ref=e46] [cursor=pointer]:
+        - /url: http://localhost:1313/
+    - text: ·
+    - generic [ref=e47]:
+      - text: Powered by
+      - link "Hugo" [ref=e48] [cursor=pointer]:
+        - /url: https://gohugo.io/
+      - text: "&"
+      - link "PaperMod" [ref=e49] [cursor=pointer]:
+        - /url: https://github.com/adityatelange/hugo-PaperMod/

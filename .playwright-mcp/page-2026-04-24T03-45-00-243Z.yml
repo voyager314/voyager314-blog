@@ -1,0 +1,41 @@
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - navigation [ref=e3]:
+      - generic [ref=e4]:
+        - link "Blog of Voyager314" [ref=e5] [cursor=pointer]:
+          - /url: http://localhost:1313/
+        - button "Toggle theme" [ref=e7] [cursor=pointer]:
+          - img [ref=e8]
+      - list [ref=e14]:
+        - listitem [ref=e15]:
+          - link "Posts" [ref=e16] [cursor=pointer]:
+            - /url: http://localhost:1313/posts/
+        - listitem [ref=e17]:
+          - link "Archive" [ref=e18] [cursor=pointer]:
+            - /url: http://localhost:1313/archives/
+        - listitem [ref=e19]:
+          - link "Search" [ref=e20] [cursor=pointer]:
+            - /url: http://localhost:1313/search/
+        - listitem [ref=e21]:
+          - link "Tags" [ref=e22] [cursor=pointer]:
+            - /url: http://localhost:1313/tags/
+  - main [ref=e23]:
+    - heading "Search" [level=1] [ref=e25]:
+      - text: Search
+      - img [ref=e26]
+    - generic [ref=e29]:
+      - searchbox "search" [active] [ref=e30]
+      - list "search results"
+  - contentinfo [ref=e31]:
+    - generic [ref=e32]:
+      - text: © 2026
+      - link "Blog of Voyager314" [ref=e33] [cursor=pointer]:
+        - /url: http://localhost:1313/
+    - text: ·
+    - generic [ref=e34]:
+      - text: Powered by
+      - link "Hugo" [ref=e35] [cursor=pointer]:
+        - /url: https://gohugo.io/
+      - text: "&"
+      - link "PaperMod" [ref=e36] [cursor=pointer]:
+        - /url: https://github.com/adityatelange/hugo-PaperMod/

@@ -2,3 +2,71 @@ baseURL = 'https://voyager314.github.io/'
 locale = 'zh-cn'
 title = 'Blog of Voyager314'
 theme = 'PaperMod'
+
+hasCJKLanguage = true
+
+[outputs]
+  home = ['HTML', 'RSS', 'JSON']
+
+[params]
+  defaultTheme = 'dark'
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = false
+  ShowCodeCopyButtons = true
+  comments = false
+  hidemeta = false
+  hideSummary = false
+  ShowToc = true
+  TocOpen = false
+  disableScrollToTop = false
+
+  [params.homeInfoParams]
+    Title = "👋 Welcome to Voyager314's Blog"
+    Content = "Hi, I'm Voyager314. I write about programming, technology, and things I'm learning. Feel free to explore!"
+
+  [[params.socialIcons]]
+    name = 'x'
+    url = 'https://x.com/yziyux'
+
+  [[params.socialIcons]]
+    name = 'github'
+    url = 'https://github.com/voyager314'
+
+  [[params.socialIcons]]
+    name = 'rss'
+    url = '/index.xml'
+
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    location = 0
+    distance = 1000
+    threshold = 0.4
+    minMatchCharLength = 0
+    keys = ['title', 'permalink', 'summary', 'content']
+
+[[menu.main]]
+  identifier = 'posts'
+  name = 'Posts'
+  url = '/posts/'
+  weight = 10
+
+[[menu.main]]
+  identifier = 'archives'
+  name = 'Archive'
+  url = '/archives/'
+  weight = 20
+
+[[menu.main]]
+  identifier = 'search'
+  name = 'Search'
+  url = '/search/'
+  weight = 30
+
+[[menu.main]]
+  identifier = 'tags'
+  name = 'Tags'
+  url = '/tags/'
+  weight = 40

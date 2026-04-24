@@ -5,17 +5,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Test | Blog of Voyager314</title>
-<meta name="keywords" content="test">
-<meta name="description" content="测试一下博客
-这是我的第一篇博客，目前还没想好写什么。
-这是用hugo&#43;github的静态页面托管构建的：
-
-
-创建两个仓库：username/username.github.io(同时也是用于访问博客的域名)，blog(或者其它名字也行)">
+<title>Search | Blog of Voyager314</title>
+<meta name="keywords" content="">
+<meta name="description" content="search">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/posts/test/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.04d768a28386a87f148a0f316131056dc3633d341981731689d4f93c1405dc93.css" integrity="sha256-BNdoooOGqH8Uig8xYTEFbcNjPTQZgXMWidT5PBQF3JM=" rel="preload stylesheet" as="style">
+<link rel="canonical" href="http://localhost:1313/search/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.04d768a28386a87f148a0f316131056dc3633d341981731689d4f93c1405dc93.css" integrity="sha256-BNdoooOGqH8Uig8xYTEFbcNjPTQZgXMWidT5PBQF3JM=" rel="preload stylesheet" as="style"><link crossorigin="anonymous" rel="preload" as="fetch" href="../index.json">
+<script defer crossorigin="anonymous" src="/assets/js/search.bce7045af27f59b10be21c17a1d52c5db8103921d02c931d6ecaf080709d1038.js" integrity="sha256-vOcEWvJ/WbEL4hwXodUsXbgQOSHQLJMdbsrwgHCdEDg="></script>
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -23,7 +19,7 @@
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/test/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/search/">
 <noscript>
     <style>
         #theme-toggle,
@@ -40,7 +36,7 @@
 
 </script>
 </head>
-<body id="top">
+<body class="list" id="top">
     <header class="header">
     <nav class="header-nav">
         <div class="logo">
@@ -81,7 +77,7 @@
             </li>
             <li>
                 <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
-                    <span>Search</span>
+                    <span class="active">Search</span>
                 </a>
             </li>
             <li>
@@ -93,84 +89,21 @@
     </nav>
 </header>
 <main class="main">
-
-<article class="post-single">
-  <header class="post-header">
-    
-    <h1 class="post-title entry-hint-parent">
-      Test
+<header class="page-header">
+    <h1>Search <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
     </h1>
-    <div class="post-meta"><span title='2026-04-23 22:26:53 +0800 CST'>April 23, 2026</span>&nbsp;·&nbsp;<span>2 min</span>
-
+</header>
+<div id="searchbox" class="searchbox">
+    <input id="searchInput" autofocus
+        placeholder="搜索文章... ↵"
+        aria-label="search" type="search" autocomplete="off" maxlength="64">
+    <p id="searchCount" class="search-count" aria-live="polite"></p>
+    <ul id="searchResults" class="searchResults" aria-label="search results"></ul>
 </div>
-  </header> 
-
-  <div class="post-content md-content"><p>测试一下博客</p>
-<p>这是我的第一篇博客，目前还没想好写什么。</p>
-<p>这是用hugo+github的静态页面托管构建的：</p>
-<ul>
-<li>
-<p>创建两个仓库：username/username.github.io(同时也是用于访问博客的域名)，blog(或者其它名字也行)</p>
-</li>
-<li>
-<p>blog用于存放hugo源文件，username.github.io用于存放静态网站文件</p>
-</li>
-<li>
-<p>在blog中创建.github/workflow/deploy.yml配置github action，可以将blog仓库的修改同步到username.github.io</p>
-<p>下面是deploy.yml的基本配置：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">name</span>: <span style="color:#ae81ff">Deploy Hugo site to Pages</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">on</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">push</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">branches</span>:
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">main</span> <span style="color:#75715e">#改成自己的blog仓库分支</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">jobs</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">build-deploy</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">steps</span>:
-</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Checkout</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v4</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">with</span>:
-</span></span><span style="display:flex;"><span>          <span style="color:#f92672">submodules</span>: <span style="color:#66d9ef">true</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#f92672">fetch-depth</span>: <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Setup Hugo</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">peaceiris/actions-hugo@v2</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">with</span>:
-</span></span><span style="display:flex;"><span>          <span style="color:#f92672">hugo-version</span>: <span style="color:#e6db74">&#39;latest&#39;</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#f92672">extended</span>: <span style="color:#66d9ef">true</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Build</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">run</span>: <span style="color:#ae81ff">hugo --minify</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Deploy</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">peaceiris/actions-gh-pages@v3</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">with</span>:
-</span></span><span style="display:flex;"><span>          <span style="color:#f92672">personal_token</span>: <span style="color:#ae81ff">${{ secrets.PERSONAL_TOKEN }}</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#f92672">external_repository</span>: <span style="color:#ae81ff">username/username.github.io</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#f92672">publish_branch</span>: <span style="color:#ae81ff">main</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#f92672">publish_dir</span>: <span style="color:#ae81ff">./public</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#f92672">commit_message</span>: <span style="color:#ae81ff">${{ github.event.head_commit.message }}</span>
-</span></span></code></pre></div><blockquote>
-<p>PERSONAL_TOKEN是在仓库settings中创建的repository secrets的name(当然，也可以是其它名字)，对应的secrets就是你的github access token。</p>
-</blockquote>
-<p>说实话，我也是第一次用actions哈哈😅，之前比较少跨仓。</p>
-<p>站点目前还有不少需要完善的，比如评论、点赞之类的功能，之后再回来研究吧。。</p>
-</li>
-</ul>
-<p>有空回来更新哈哈。。（手动狗头）</p>
-
-
-  </div>
-
-  <footer class="post-footer">
-    <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/test/">Test</a></li>
-    </ul>
-
-  </footer>
-</article>
     </main>
     
 <footer class="footer">
@@ -508,53 +441,6 @@
         }
     })
 
-</script>
-<script>
-    document.querySelectorAll('pre > code').forEach((codeblock) => {
-        const container = codeblock.parentNode.parentNode;
-
-        const copybutton = document.createElement('button');
-        copybutton.classList.add('copy-code');
-        copybutton.innerHTML = 'copy';
-
-        function copyingDone() {
-            copybutton.innerHTML = 'copied!';
-            setTimeout(() => {
-                copybutton.innerHTML = 'copy';
-            }, 2000);
-        }
-
-        copybutton.addEventListener('click', (cb) => {
-            if ('clipboard' in navigator) {
-                navigator.clipboard.writeText(codeblock.textContent);
-                copyingDone();
-                return;
-            }
-
-            const range = document.createRange();
-            range.selectNodeContents(codeblock);
-            const selection = window.getSelection();
-            selection.removeAllRanges();
-            selection.addRange(range);
-            try {
-                document.execCommand('copy');
-                copyingDone();
-            } catch (e) { };
-            selection.removeRange(range);
-        });
-
-        if (container.classList.contains("highlight")) {
-            container.appendChild(copybutton);
-        } else if (container.parentNode.firstChild == container) {
-            
-        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
-            
-            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
-        } else {
-            
-            codeblock.parentNode.appendChild(copybutton);
-        }
-    });
 </script>
 </body>
 

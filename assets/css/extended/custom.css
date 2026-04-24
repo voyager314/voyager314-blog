@@ -1,0 +1,427 @@
+/* ============================================================
+   Dark theme color overrides — matching lil'log aesthetic
+   ============================================================ */
+[data-theme="dark"] {
+    --theme: #1a1b1e;
+    --entry: #27282c;
+    --primary: #e8e8ea;
+    --secondary: #9d9ea2;
+    --tertiary: #3c3d41;
+    --content: #c8c9cd;
+    --border: #2e2f33;
+    --code-block-bg: #2d2e32;
+    --code-bg: #27282c;
+}
+
+/* ============================================================
+   Base typography
+   ============================================================ */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC',
+        'PingFang SC', 'Microsoft YaHei', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+/* ============================================================
+   Header
+   ============================================================ */
+.header {
+    border-bottom: 1px solid var(--border);
+}
+
+/* ============================================================
+   Home info (welcome section) — borderless, text-only feel
+   ============================================================ */
+.home-info {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    min-height: unset;
+    padding: var(--gap) 0;
+    margin-bottom: calc(var(--gap) * 1.5);
+}
+
+.home-info .entry-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+    color: var(--primary);
+}
+
+.home-info .entry-content {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--content);
+    -webkit-line-clamp: unset;
+    margin-top: 0.6rem;
+}
+
+.home-info .entry-footer {
+    margin-top: 1.25rem;
+}
+
+/* Social icons spacing */
+.home-info .social-icons a {
+    padding: 0 0.6rem 0 0;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.home-info .social-icons a:hover {
+    opacity: 0.7;
+    transform: translateY(-2px);
+}
+
+/* ============================================================
+   Post entry cards
+   ============================================================ */
+.post-entry {
+    position: relative;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+}
+
+/* Spotlight hover effect — subtle radial gradient follows cursor */
+.post-entry::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+        220px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba(255, 255, 255, 0.05) 0%,
+        transparent 80%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.post-entry:hover::before {
+    opacity: 1;
+}
+
+.post-entry:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+}
+
+.post-entry:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow: none;
+}
+
+/* Keep inner content above the ::before overlay */
+.post-entry > * {
+    position: relative;
+    z-index: 1;
+}
+
+.entry-header h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary);
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+}
+
+.entry-content {
+    color: var(--secondary);
+    font-size: 0.875rem;
+    line-height: 1.65;
+}
+
+.entry-footer {
+    color: var(--secondary);
+    font-size: 0.8rem;
+    opacity: 0.85;
+}
+
+/* ============================================================
+   Scroll-in animation for post cards
+   ============================================================ */
+@keyframes cardFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.post-entry {
+    animation: cardFadeIn 0.45s ease both;
+    animation-play-state: paused;
+}
+
+.post-entry.is-visible {
+    animation-play-state: running;
+}
+
+/* Search results are dynamically injected — skip scroll animation */
+.search-result-item {
+    animation: none;
+    opacity: 1;
+    transform: none;
+}
+
+/* ============================================================
+   Reading progress bar (single post pages)
+   ============================================================ */
+#reading-progress-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+#reading-progress {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #6c8ebf 0%, #a89cd4 100%);
+    transition: width 0.08s linear;
+}
+
+/* ============================================================
+   Responsive adjustments
+   ============================================================ */
+@media (max-width: 768px) {
+    .home-info .entry-header h1 {
+        font-size: 1.55rem;
+    }
+
+    .entry-header h2 {
+        font-size: 1.05rem;
+    }
+}
+
+/* ============================================================
+   Search page — enhanced result cards
+   ============================================================ */
+.search-count {
+    font-size: 0.8rem;
+    color: var(--secondary);
+    margin: 0.25rem 0 var(--gap);
+    min-height: 1.2em;
+}
+
+.search-result-item .entry-header h2 {
+    font-size: 1.05rem;
+}
+
+/* Unclamp excerpt in search results */
+.search-summary {
+    -webkit-line-clamp: unset !important;
+    display: block !important;
+}
+
+.search-result-item mark,
+.search-summary mark {
+    background: rgba(168, 156, 212, 0.28);
+    color: inherit;
+    border-radius: 2px;
+    padding: 0 2px;
+}
+
+.no-results {
+    list-style: none;
+    color: var(--secondary);
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 0.9rem;
+}
+
+/* ============================================================
+   Global search modal (Ctrl+K)
+   ============================================================ */
+.search-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 12vh;
+}
+
+.search-modal[hidden] { display: none; }
+
+.search-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.search-modal-box {
+    position: relative;
+    z-index: 1;
+    width: min(640px, 92vw);
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+    animation: modalIn 0.18s ease both;
+}
+
+@keyframes modalIn {
+    from { opacity: 0; transform: scale(0.96) translateY(-10px); }
+    to   { opacity: 1; transform: scale(1)    translateY(0); }
+}
+
+.search-modal-input-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.search-modal-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    color: var(--secondary);
+}
+
+#modal-search-input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    color: var(--primary);
+    font-family: inherit;
+    caret-color: var(--primary);
+}
+
+#modal-search-input::placeholder { color: var(--secondary); }
+
+.search-modal-esc {
+    font-size: 0.68rem;
+    color: var(--secondary);
+    background: var(--tertiary);
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-family: inherit;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.search-modal-results {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 420px;
+    overflow-y: auto;
+}
+
+.modal-result {
+    padding: 0.8rem 1rem;
+    cursor: pointer;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.1s ease;
+    user-select: none;
+}
+
+.modal-result:last-child { border-bottom: none; }
+
+.modal-result--active,
+.modal-result:hover { background: var(--tertiary); }
+
+.modal-result-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 0.25rem;
+    line-height: 1.4;
+}
+
+.modal-result-snippet {
+    font-size: 0.8rem;
+    color: var(--secondary);
+    line-height: 1.55;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.modal-result-meta {
+    font-size: 0.72rem;
+    color: var(--secondary);
+    opacity: 0.7;
+    margin-top: 0.2rem;
+}
+
+.modal-result mark {
+    background: rgba(168, 156, 212, 0.3);
+    color: inherit;
+    border-radius: 2px;
+    padding: 0 1px;
+}
+
+.modal-no-results {
+    text-align: center;
+    color: var(--secondary);
+    padding: 2.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+.search-modal-footer {
+    display: flex;
+    gap: 1.25rem;
+    padding: 0.55rem 1rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.7rem;
+    color: var(--secondary);
+}
+
+.search-modal-footer kbd {
+    display: inline-block;
+    background: var(--tertiary);
+    border-radius: 3px;
+    padding: 1px 5px;
+    font-family: inherit;
+    font-size: 0.68rem;
+    margin: 0 1px;
+}
+
+@media (max-width: 768px) {
+    .search-modal { padding-top: 4vh; align-items: flex-start; }
+    .search-modal-box { border-radius: 12px; }
+    .search-modal-results { max-height: 60vh; }
+    .search-modal-footer { display: none; }
+}
+
+/* ============================================================
+   Custom scrollbar (Webkit)
+   ============================================================ */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--tertiary);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary);
+}
