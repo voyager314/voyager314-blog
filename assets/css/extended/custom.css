@@ -121,6 +121,12 @@ body {
     z-index: 1;
 }
 
+/* Restore absolute positioning for the ghost link that covers the whole card */
+.post-entry .entry-link {
+    position: absolute;
+    z-index: 2;
+}
+
 .entry-header h2 {
     font-size: 1.2rem;
     font-weight: 600;
