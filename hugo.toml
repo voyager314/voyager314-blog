@@ -1,6 +1,6 @@
 baseURL = 'https://voyager314.github.io/'
 locale = 'zh-cn'
-title = 'Blog of Voyager314'
+title = 'Blog of YangZiyu'
 theme = 'PaperMod'
 
 hasCJKLanguage = true
@@ -23,8 +23,8 @@ hasCJKLanguage = true
   disableScrollToTop = false
 
   [params.homeInfoParams]
-    Title = "👋 Welcome to Voyager314's Blog"
-    Content = "Hi, I'm Voyager314. I write about programming, technology, and things I'm learning. Feel free to explore!"
+    Title = "👋 Welcome to YangZiyu's Blog"
+    Content = "Hi, I'm YangZiyu. I'm learning agent developing and backend engineering. This blog mainly serves to record what I have learned and share my understanding of various technologies. Of course, I will also post about some interesting things. Feel free to explore!"
 
   [[params.socialIcons]]
     name = 'x'
