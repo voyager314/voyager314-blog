@@ -2,6 +2,47 @@
      Reading progress bar — single post pages only
      ============================================================ */ -}}
 {{- if .IsPage }}
+{{- /* ============================================================
+     Busuanzi page view — format number and swap spinner
+     ============================================================ */ -}}
+<script>
+(function () {
+  var pvEl = document.getElementById('busuanzi_value_page_pv');
+  if (!pvEl) return;
+  var spinner = pvEl.previousElementSibling; // .pv-spinner
+
+  function formatPV(n) {
+    if (n >= 10000) {
+      var val = (n / 10000).toFixed(2).replace(/\.?0+$/, '');
+      return val + 'w';
+    }
+    return String(n);
+  }
+
+  function applyValue() {
+    var raw = parseInt(pvEl.textContent.trim(), 10);
+    if (!isNaN(raw) && raw >= 0) {
+      pvEl.textContent = formatPV(raw);
+      pvEl.style.display = '';
+      if (spinner) spinner.style.display = 'none';
+      return true;
+    }
+    return false;
+  }
+
+  if (!applyValue()) {
+    var observer = new MutationObserver(function () {
+      if (applyValue()) observer.disconnect();
+    });
+    observer.observe(pvEl, { childList: true, characterData: true, subtree: true });
+    // Hide spinner after 6s if busuanzi never responds
+    setTimeout(function () {
+      observer.disconnect();
+      if (spinner) spinner.style.display = 'none';
+    }, 6000);
+  }
+})();
+</script>
 <div id="reading-progress-wrap"><div id="reading-progress"></div></div>
 <script>
 (function () {

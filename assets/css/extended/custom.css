@@ -412,6 +412,39 @@ body {
 }
 
 /* ============================================================
+   Page view counter (busuanzi)
+   ============================================================ */
+.post-pv-wrap {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.pv-icon {
+    width: 13px;
+    height: 13px;
+    vertical-align: -1px;
+    opacity: 0.75;
+    flex-shrink: 0;
+}
+
+.pv-spinner {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 1.5px solid currentColor;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: pvSpin 0.7s linear infinite;
+    opacity: 0.45;
+    flex-shrink: 0;
+}
+
+@keyframes pvSpin {
+    to { transform: rotate(360deg); }
+}
+
+/* ============================================================
    Custom scrollbar (Webkit)
    ============================================================ */
 ::-webkit-scrollbar {
