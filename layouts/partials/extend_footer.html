@@ -3,11 +3,16 @@
      ============================================================ */ -}}
 {{- if .IsPage }}
 {{- /* ============================================================
-     Busuanzi page view — format number and swap spinner
+     Busuanzi v3 — must be synchronous (no defer/async) so that
+     document.currentScript is available inside the CDN script.
+     ============================================================ */ -}}
+<script src="//cdn.busuanzi.cc/busuanzi/3.6.9/busuanzi.abbr.min.js"></script>
+{{- /* ============================================================
+     Format PV number and swap spinner once busuanzi fills value
      ============================================================ */ -}}
 <script>
 (function () {
-  var pvEl = document.getElementById('busuanzi_value_page_pv');
+  var pvEl = document.getElementById('busuanzi_page_pv');
   if (!pvEl) return;
   var spinner = pvEl.previousElementSibling; // .pv-spinner
 
