@@ -23,7 +23,7 @@ tags = ['test']
 
 - blog用于存放hugo源文件，username.github.io托管静态网页文件。
 
-- 在blog中创建.github/workflow/deploy.yml配置github action，可以将blog仓库的修改同步到username.github.io 。
+- 在blog中创建.github/workflow/deploy.yml配置github actions，可以将blog仓库的修改同步到username.github.io 。
 
 - 配置deploy.yml
 
