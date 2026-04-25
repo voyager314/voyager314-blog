@@ -6,8 +6,16 @@
     <description>Recent content in Posts on Yang Blog</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 23 Apr 2026 22:26:53 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 25 Apr 2026 11:26:25 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Enable PV Count</title>
+      <link>http://localhost:1313/posts/blog-1/</link>
+      <pubDate>Sat, 25 Apr 2026 11:26:25 +0800</pubDate>
+      <guid>http://localhost:1313/posts/blog-1/</guid>
+      <description>&lt;p&gt;由于静态网站的限制，在添加浏览量显示这类动态展示功能时，需要引入第三方服务。&lt;/p&gt;
+&lt;p&gt;此处，博主采用 &lt;a href=&#34;https://www.busuanzi.cc/&#34;&gt;busuanzi&lt;/a&gt; 作为提供商，优点是简单快捷，只需引入script脚本即可实现计数功能。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Test</title>
       <link>http://localhost:1313/posts/test/</link>

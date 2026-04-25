@@ -2,7 +2,7 @@
 date = '2026-04-25T11:26:25+08:00'
 draft = false
 title = 'Enable PV Count'
-tags = [busuanzi]
+tags = ['busuanzi']
 
 +++
 
