@@ -1,0 +1,34 @@
+{{- $scratch := newScratch }}
+
+{{- if not .Date.IsZero -}}
+{{- $scratch.Add "meta" (slice (printf "<span title='%s'>%s</span>" (.Date) (.Date | time.Format (default ":date_long" site.Params.DateFormat)))) }}
+{{- end }}
+
+{{- if (.Param "ShowReadingTime") -}}
+{{- $scratch.Add "meta" (slice (printf "<span>%s</span>" (i18n "read_time" .ReadingTime | default (printf "%d min" .ReadingTime)))) }}
+{{- end }}
+
+{{- if (.Param "ShowWordCount") -}}
+{{- $scratch.Add "meta" (slice (printf "<span>%s</span>" (i18n "words" .WordCount | default (printf "%d words" .WordCount)))) }}
+{{- end }}
+
+{{- if not (.Param "hideAuthor") -}}
+{{- with (partial "author.html" .) }}
+{{- $scratch.Add "meta" (slice (printf "<span>%s</span>" .)) }}
+{{- end }}
+{{- end }}
+
+{{- $meta := $scratch.Get "meta" -}}
+{{- with $meta -}}{{- delimit . "&nbsp;·&nbsp;" | safeHTML -}}{{- end -}}
+
+{{- if .IsPage -}}
+{{- with $meta }}&nbsp;·&nbsp;{{- end -}}
+<span class="post-pv-wrap" title="浏览量">
+  <svg class="pv-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+    <circle cx="12" cy="12" r="3"/>
+  </svg>
+  <span class="pv-spinner" aria-hidden="true"></span>
+  <span id="busuanzi_page_pv" class="pv-value" style="display:none"></span>
+</span>
+{{- end -}}

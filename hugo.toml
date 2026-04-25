@@ -70,3 +70,6 @@ hasCJKLanguage = true
   name = 'Tags'
   url = '/tags/'
   weight = 40
+
+[busuanzi]
+enable = true

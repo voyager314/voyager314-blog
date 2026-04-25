@@ -33,7 +33,7 @@
         document.querySelector("html").dataset.theme = 'light';
     }
 
-</script><script src="//cdn.busuanzi.cc/busuanzi/3.6.9/busuanzi.abbr.min.js" defer></script>
+</script>
 </head>
 <body class="list" id="top">
     <header class="header">
@@ -114,7 +114,7 @@
     <circle cx="12" cy="12" r="3"/>
   </svg>
   <span class="pv-spinner" aria-hidden="true"></span>
-  <span id="busuanzi_value_page_pv" class="pv-value" style="display:none"></span>
+  <span id="busuanzi_page_pv" class="pv-value" style="display:none"></span>
 </span></div>
         <a class="entry-link" aria-label="post link to Test" href="http://localhost:1313/posts/test/"></a>
       </div>
@@ -138,9 +138,9 @@
         <polyline points="17 11 12 6 7 11"></polyline>
         <polyline points="17 18 12 13 7 18"></polyline>
     </svg>
-</a><script>
+</a><script src="//cdn.busuanzi.cc/busuanzi/3.6.9/busuanzi.abbr.min.js"></script><script>
 (function () {
-  var pvEl = document.getElementById('busuanzi_value_page_pv');
+  var pvEl = document.getElementById('busuanzi_page_pv');
   if (!pvEl) return;
   var spinner = pvEl.previousElementSibling; 
 
