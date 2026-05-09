@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="dark">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Enable PV Count | Yang Blog</title>
+<meta name="keywords" content="busuanzi">
+<meta name="description" content="由于静态网站的限制，在添加浏览量显示这类动态展示功能时，需要引入第三方服务。
+此处，博主采用 busuanzi 作为提供商，优点是简单快捷，只需引入script脚本即可实现计数功能。">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/blog-1/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.4f29635c63e1a8bda0f85f853cbc129bafab6491590cd6b62054af3fda23167e.css" integrity="sha256-TyljXGPhqL2g&#43;F&#43;FPLwSm6&#43;rZJFZDNa2IFSvP9ojFn4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/blog-1/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Yang Blog (Alt + H)">Yang Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="http://localhost:1313/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Enable PV Count
+    </h1>
+    <div class="post-meta"><span title='2026-04-25 11:26:25 +0800 CST'>April 25, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span class="post-pv-wrap" title="浏览量">
+  <svg class="pv-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+    <circle cx="12" cy="12" r="3"/>
+  </svg>
+  <span class="pv-spinner" aria-hidden="true"></span>
+  <span id="busuanzi_page_pv" class="pv-value" style="display:none"></span>
+</span>
+
+</div>
+  </header> <details class="toc" >
+    <summary accesskey="c" title="(Alt + C)">
+        <span class="title">Table of Contents</span>
+    </summary>
+
+    <div class="inner"><ul>
+            <li>
+                <a href="#%e5%ae%9e%e7%8e%b0%e6%96%b9%e6%a1%88" aria-label="实现方案">实现方案</a><ul>
+                    
+            <li>
+                <a href="#%e6%b6%89%e5%8f%8a%e6%96%87%e4%bb%b6" aria-label="涉及文件">涉及文件</a></li>
+            <li>
+                <a href="#1-%e5%85%83%e4%bf%a1%e6%81%af%e6%a8%a1%e6%9d%bfpost_metahtml" aria-label="1. 元信息模板（post_meta.html）">1. 元信息模板（post_meta.html）</a></li>
+            <li>
+                <a href="#2-%e8%84%9a%e6%9c%ac%e5%8a%a0%e8%bd%bdextend_footerhtml" aria-label="2. 脚本加载（extend_footer.html）">2. 脚本加载（extend_footer.html）</a></li>
+            <li>
+                <a href="#3-%e6%95%b0%e5%ad%97%e6%a0%bc%e5%bc%8f%e5%8c%96" aria-label="3. 数字格式化">3. 数字格式化</a></li></ul>
+            </li>
+            <li>
+                <a href="#%e8%b8%a9%e5%9d%91%e8%ae%b0%e5%bd%95" aria-label="踩坑记录">踩坑记录</a><ul>
+                    
+            <li>
+                <a href="#%e9%97%ae%e9%a2%98%e4%b8%8a%e7%ba%bf%e5%90%8e%e4%b8%8d%e6%98%be%e7%a4%ba%e6%9c%ac%e5%9c%b0%e6%ad%a3%e5%b8%b8" aria-label="问题：上线后不显示，本地正常">问题：上线后不显示，本地正常</a></li>
+            <li>
+                <a href="#%e9%97%ae%e9%a2%98%e5%85%83%e7%b4%a0-id-%e5%86%99%e9%94%99" aria-label="问题：元素 ID 写错">问题：元素 ID 写错</a></li>
+            <li>
+                <a href="#%e9%97%ae%e9%a2%98hugotoml-%e9%85%8d%e7%bd%ae%e7%bc%ba%e5%a4%b1" aria-label="问题：hugo.toml 配置缺失">问题：hugo.toml 配置缺失</a></li>
+            <li>
+                <a href="#%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9" aria-label="注意事项">注意事项</a>
+            </li>
+        </ul>
+        </li>
+        </ul>
+    </div>
+</details>
+
+  <div class="post-content md-content"><p>由于静态网站的限制，在添加浏览量显示这类动态展示功能时，需要引入第三方服务。</p>
+<p>此处，博主采用 <a href="https://www.busuanzi.cc/">busuanzi</a> 作为提供商，优点是简单快捷，只需引入script脚本即可实现计数功能。</p>
+<hr>
+<h2 id="实现方案">实现方案<a hidden class="anchor" aria-hidden="true" href="#实现方案">#</a></h2>
+<h3 id="涉及文件">涉及文件<a hidden class="anchor" aria-hidden="true" href="#涉及文件">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>文件</th>
+          <th>作用</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>layouts/partials/post_meta.html</code></td>
+          <td>覆盖主题元信息模板，添加眼睛图标与计数元素</td>
+      </tr>
+      <tr>
+          <td><code>layouts/partials/extend_footer.html</code></td>
+          <td>加载 busuanzi 脚本，格式化数字，控制加载动画</td>
+      </tr>
+      <tr>
+          <td><code>assets/css/extended/custom.css</code></td>
+          <td>旋转加载圈与图标样式</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="1-元信息模板post_metahtml">1. 元信息模板（<code>post_meta.html</code>）<a hidden class="anchor" aria-hidden="true" href="#1-元信息模板post_metahtml">#</a></h3>
+<p>在原有的日期、阅读时长等信息之后，追加浏览量组件：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;post-pv-wrap&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;浏览量&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">&lt;!-- 眼睛图标 (SVG) --&gt;</span>
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pv-spinner&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;          <span style="color:#75715e">&lt;!-- 加载中旋转圈 --&gt;</span>
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;busuanzi_page_pv&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;display:none&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;  <span style="color:#75715e">&lt;!-- 计数值 --&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">span</span>&gt;
+</span></span></code></pre></div><blockquote>
+<p><strong>注意</strong>：v3 的元素 ID 是 <code>busuanzi_page_pv</code>，与旧版 v2 的 <code>busuanzi_value_page_pv</code> <strong>不同</strong>，不可混用。</p>
+</blockquote>
+<h3 id="2-脚本加载extend_footerhtml">2. 脚本加载（<code>extend_footer.html</code>）<a hidden class="anchor" aria-hidden="true" href="#2-脚本加载extend_footerhtml">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//cdn.busuanzi.cc/busuanzi/3.6.9/busuanzi.abbr.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p><strong>脚本必须同步加载（不加 <code>defer</code> / <code>async</code>）</strong>，原因如下：</p>
+<p>v3 脚本内部通过 <code>document.currentScript.src</code> 推导 API 地址：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">u</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">URL</span>(document.<span style="color:#a6e22e">currentScript</span>.<span style="color:#a6e22e">src</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fetch</span>(<span style="color:#a6e22e">u</span>.<span style="color:#a6e22e">protocol</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;//&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">u</span>.<span style="color:#a6e22e">host</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;/abbr-api.php&#39;</span>, ...)
+</span></span></code></pre></div><p>浏览器规范规定，<code>defer</code> 和 <code>async</code> 脚本执行时 <code>document.currentScript</code> 恒为 <code>null</code>，导致第一行即抛出 <code>TypeError</code>，fetch 请求从未发出，页面无任何报错但计数始终不显示。</p>
+<p>将脚本放在 <code>extend_footer.html</code>（页面底部）而非 <code>&lt;head&gt;</code>，可在不阻塞首屏渲染的前提下保持同步加载。</p>
+<h3 id="3-数字格式化">3. 数字格式化<a hidden class="anchor" aria-hidden="true" href="#3-数字格式化">#</a></h3>
+<p>busuanzi 回填数值后，通过 <code>MutationObserver</code> 拦截并格式化：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">formatPV</span>(<span style="color:#a6e22e">n</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">n</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">10000</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (<span style="color:#a6e22e">n</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">10000</span>).<span style="color:#a6e22e">toFixed</span>(<span style="color:#ae81ff">2</span>).<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/\.?0+$/</span>, <span style="color:#e6db74">&#39;&#39;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;w&#39;</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> String(<span style="color:#a6e22e">n</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 示例：10150 → &#34;1.02w&#34;，20000 → &#34;2w&#34;，9999 → &#34;9999&#34;
+</span></span></span></code></pre></div><p>加载完成前显示旋转圈，6 秒内无响应则自动隐藏。</p>
+<hr>
+<h2 id="踩坑记录">踩坑记录<a hidden class="anchor" aria-hidden="true" href="#踩坑记录">#</a></h2>
+<h3 id="问题上线后不显示本地正常">问题：上线后不显示，本地正常<a hidden class="anchor" aria-hidden="true" href="#问题上线后不显示本地正常">#</a></h3>
+<p><strong>根因</strong>：脚本标签写了 <code>defer</code>，导致 <code>document.currentScript</code> 为 <code>null</code>，API 请求静默失败。</p>
+<p><strong>解决</strong>：移除 <code>defer</code>，将脚本放至页面底部同步执行。</p>
+<h3 id="问题元素-id-写错">问题：元素 ID 写错<a hidden class="anchor" aria-hidden="true" href="#问题元素-id-写错">#</a></h3>
+<p><strong>根因</strong>：误用了 v2 的 ID <code>busuanzi_value_page_pv</code>，而 v3 API 实际返回的 key 为 <code>busuanzi_page_pv</code>。</p>
+<p><strong>解决</strong>：统一改为 <code>busuanzi_page_pv</code>。</p>
+<h3 id="问题hugotoml-配置缺失">问题：hugo.toml 配置缺失<a hidden class="anchor" aria-hidden="true" href="#问题hugotoml-配置缺失">#</a></h3>
+<p><strong>解决</strong>：在 <code>hugo.toml</code>中手动开启 busuanzi 计数功能</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">busuanzi</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">enable</span> = <span style="color:#66d9ef">true</span>
+</span></span></code></pre></div><h3 id="注意事项">注意事项<a hidden class="anchor" aria-hidden="true" href="#注意事项">#</a></h3>
+<ul>
+<li>
+<p>busuanzi v3 <strong>禁止 <code>localhost</code> 接入</strong>，本地 <code>hugo server</code> 调试时不会显示数字，属正常现象，推送至 GitHub Pages 后生效。</p>
+</li>
+<li>
+<p>域名长度不得超过 22 个字符（<code>voyager314.github.io</code> 共 21 字符，在限制内）。</p>
+</li>
+<li>
+<p>必须在 <code>hugo.toml</code> 中开启 busuanzi 功能，否则上述配置上线后依然无效！</p>
+<ul>
+<li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">busuanzi</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">enable</span> = <span style="color:#66d9ef">true</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/busuanzi/">Busuanzi</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="http://localhost:1313/posts/test/">
+    <span class="title">Next »</span>
+    <span>Test</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">Yang Blog</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a><script src="//cdn.busuanzi.cc/busuanzi/3.6.9/busuanzi.abbr.min.js"></script><script>
+(function () {
+  var pvEl = document.getElementById('busuanzi_page_pv');
+  if (!pvEl) return;
+  var spinner = pvEl.previousElementSibling; 
+
+  function formatPV(n) {
+    if (n >= 10000) {
+      var val = (n / 10000).toFixed(2).replace(/\.?0+$/, '');
+      return val + 'w';
+    }
+    return String(n);
+  }
+
+  function applyValue() {
+    var raw = parseInt(pvEl.textContent.trim(), 10);
+    if (!isNaN(raw) && raw >= 0) {
+      pvEl.textContent = formatPV(raw);
+      pvEl.style.display = '';
+      if (spinner) spinner.style.display = 'none';
+      return true;
+    }
+    return false;
+  }
+
+  if (!applyValue()) {
+    var observer = new MutationObserver(function () {
+      if (applyValue()) observer.disconnect();
+    });
+    observer.observe(pvEl, { childList: true, characterData: true, subtree: true });
+    
+    setTimeout(function () {
+      observer.disconnect();
+      if (spinner) spinner.style.display = 'none';
+    }, 6000);
+  }
+})();
+</script>
+<div id="reading-progress-wrap"><div id="reading-progress"></div></div>
+<script>
+(function () {
+  var bar = document.getElementById('reading-progress');
+  if (!bar) return;
+  function tick() {
+    var article = document.querySelector('.post-single');
+    if (!article) return;
+    var scrolled = window.scrollY - article.offsetTop;
+    var total = article.offsetHeight - window.innerHeight;
+    bar.style.width = Math.max(0, Math.min(100, (scrolled / total) * 100)) + '%';
+  }
+  window.addEventListener('scroll', tick, { passive: true });
+  tick();
+})();
+</script><script>
+(function () {
+  if (!window.IntersectionObserver) return;
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.06 });
+  document.querySelectorAll('.post-entry').forEach(function (el, i) {
+    el.style.animationDelay = (i * 0.06) + 's';
+    observer.observe(el);
+  });
+})();
+</script><script>
+(function () {
+  document.querySelectorAll('.post-entry').forEach(function (card) {
+    card.addEventListener('mousemove', function (e) {
+      var rect = card.getBoundingClientRect();
+      card.style.setProperty('--mouse-x', (e.clientX - rect.left) + 'px');
+      card.style.setProperty('--mouse-y', (e.clientY - rect.top) + 'px');
+    });
+  });
+})();
+</script>
+<script>
+(function () {
+   
+  var modalHtml = [
+    '<div id="search-modal" class="search-modal" role="dialog" aria-modal="true" hidden>',
+    '  <div class="search-modal-backdrop"></div>',
+    '  <div class="search-modal-box">',
+    '    <div class="search-modal-input-wrap">',
+    '      <svg class="search-modal-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"',
+    '           fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">',
+    '        <circle cx="11" cy="11" r="8"></circle>',
+    '        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>',
+    '      </svg>',
+    '      <input id="modal-search-input" type="text" autocomplete="off"',
+    '             placeholder="搜索文章..." maxlength="64" aria-label="全局搜索">',
+    '      <kbd class="search-modal-esc" aria-label="关闭">Esc</kbd>',
+    '    </div>',
+    '    <ul id="modal-search-results" class="search-modal-results" aria-label="搜索建议"></ul>',
+    '    <div class="search-modal-footer">',
+    '      <span><kbd>↑</kbd><kbd>↓</kbd> 导航</span>',
+    '      <span><kbd>↵</kbd> 进入</span>',
+    '      <span><kbd>Esc</kbd> 关闭</span>',
+    '    </div>',
+    '  </div>',
+    '</div>'
+  ].join('');
+  document.body.insertAdjacentHTML('beforeend', modalHtml);
+
+   
+  var modal      = document.getElementById('search-modal');
+  var backdrop   = modal.querySelector('.search-modal-backdrop');
+  var mInput     = document.getElementById('modal-search-input');
+  var mResults   = document.getElementById('modal-search-results');
+
+  var fuseUrl    = '\/js\/fuse.basic.min.7d2f9d9726313c52eab7c5f56cf50497a24c71bff73b7e4b05b136e5c36f84a0.js';
+  var fuseLoaded = false;
+  var fuseLoading = false;
+  var mFuse      = null;
+  var indexLoaded = false;
+
+   
+  function esc(str) {
+    return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+
+   
+  function hlChars(text, indices) {
+    if (!indices || !indices.length) return esc(text);
+    var chars = Array.from(text), out = '', i = 0;
+    indices.forEach(function(pair) {
+      out += esc(chars.slice(i, pair[0]).join(''));
+      out += '<mark>' + esc(chars.slice(pair[0], pair[1] + 1).join('')) + '</mark>';
+      i = pair[1] + 1;
+    });
+    return out + esc(chars.slice(i).join(''));
+  }
+
+  function snippet(text, indices, radius) {
+    radius = radius || 60;
+    if (!text) return '';
+    if (!indices || !indices.length) return esc(text.slice(0, 120)) + (text.length > 120 ? '…' : '');
+    var s = indices[0][0];
+    var from = Math.max(0, s - radius);
+    var to   = Math.min(text.length, s + radius * 2);
+    var shifted = indices.map(function(p){ return [p[0]-from, p[1]-from]; })
+                         .filter(function(p){ return p[0] >= 0 && p[1] < to-from+1; });
+    return (from > 0 ? '…' : '') + hlChars(text.slice(from, to), shifted) + (to < text.length ? '…' : '');
+  }
+
+  function getIdx(matches, key) {
+    var m = (matches || []).filter(function(x){ return x.key === key; })[0];
+    return m ? m.indices : null;
+  }
+
+   
+  function loadFuseAndIndex(cb) {
+    function loadIndex() {
+      if (indexLoaded) { cb(); return; }
+      fetch('/index.json')
+        .then(function(r){ return r.json(); })
+        .then(function(data) {
+          mFuse = new Fuse(data, {
+            includeMatches: true,
+            minMatchCharLength: 2,
+            threshold: 0.4,
+            ignoreLocation: true,
+            keys: ['title', 'summary', 'content']
+          });
+          indexLoaded = true;
+          cb();
+        })
+        .catch(function(){});
+    }
+
+    if (window.Fuse) { loadIndex(); return; }
+    if (fuseLoading) {
+      var wait = setInterval(function(){
+        if (window.Fuse) { clearInterval(wait); loadIndex(); }
+      }, 80);
+      return;
+    }
+    fuseLoading = true;
+    var s = document.createElement('script');
+    s.src = fuseUrl;
+    s.onload = function(){ fuseLoaded = true; loadIndex(); };
+    document.head.appendChild(s);
+  }
+
+   
+  function renderResults(query) {
+    if (!mFuse || !query) { mResults.innerHTML = ''; return; }
+    var results = mFuse.search(query, { limit: 8 });
+    if (!results.length) {
+      mResults.innerHTML = '<li class="modal-no-results">没有找到相关文章</li>';
+      return;
+    }
+    mResults.innerHTML = results.map(function(r, idx) {
+      var item    = r.item;
+      var matches = r.matches;
+      var titleHtml   = hlChars(item.title || '', getIdx(matches, 'title'));
+      var snippetHtml = snippet(item.summary || item.content || '',
+                                getIdx(matches, 'summary') || getIdx(matches, 'content'));
+      var meta = [item.date, item.readingTime ? item.readingTime + ' min' : '']
+                   .filter(Boolean).join(' · ');
+      return '<li class="modal-result' + (idx === 0 ? ' modal-result--active' : '') + '"'
+           + ' data-href="' + esc(item.permalink) + '">'
+           + '<div class="modal-result-title">' + titleHtml + '</div>'
+           + '<div class="modal-result-snippet">' + snippetHtml + '</div>'
+           + (meta ? '<div class="modal-result-meta">' + esc(meta) + '</div>' : '')
+           + '</li>';
+    }).join('');
+  }
+
+   
+  function openModal() {
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    mInput.focus();
+    loadFuseAndIndex(function() {
+      if (mInput.value.trim()) renderResults(mInput.value.trim());
+    });
+  }
+
+  function closeModal() {
+    modal.hidden = true;
+    document.body.style.overflow = '';
+    mInput.value = '';
+    mResults.innerHTML = '';
+  }
+
+   
+  
+  document.addEventListener('keydown', function(e) {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+      e.preventDefault();
+      modal.hidden ? openModal() : closeModal();
+    }
+    if (!modal.hidden && e.key === 'Escape') closeModal();
+  });
+
+  
+  document.querySelectorAll('a[href*="/search/"]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      openModal();
+    });
+  });
+
+  
+  backdrop.addEventListener('click', closeModal);
+
+  
+  modal.querySelector('.search-modal-esc').addEventListener('click', closeModal);
+
+   
+  mInput.addEventListener('input', function() {
+    var q = this.value.trim();
+    if (!indexLoaded) { loadFuseAndIndex(function(){ renderResults(q); }); return; }
+    renderResults(q);
+  });
+
+   
+  mInput.addEventListener('keydown', function(e) {
+    var items  = Array.from(mResults.querySelectorAll('.modal-result'));
+    if (!items.length) return;
+    var active = mResults.querySelector('.modal-result--active');
+    var idx    = items.indexOf(active);
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (active) active.classList.remove('modal-result--active');
+      (items[idx + 1] || items[0]).classList.add('modal-result--active');
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (active) active.classList.remove('modal-result--active');
+      (items[idx - 1] || items[items.length - 1]).classList.add('modal-result--active');
+    } else if (e.key === 'Enter') {
+      var target = mResults.querySelector('.modal-result--active');
+      if (target && target.dataset.href) window.location.href = target.dataset.href;
+    }
+  });
+
+  
+  mResults.addEventListener('mousemove', function(e) {
+    var item = e.target.closest('.modal-result');
+    if (!item) return;
+    mResults.querySelectorAll('.modal-result--active').forEach(function(el){ el.classList.remove('modal-result--active'); });
+    item.classList.add('modal-result--active');
+  });
+
+  
+  mResults.addEventListener('click', function(e) {
+    var item = e.target.closest('.modal-result');
+    if (item && item.dataset.href) window.location.href = item.dataset.href;
+  });
+})();
+</script>
+
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

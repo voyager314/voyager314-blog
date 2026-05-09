@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Busuanzi on Yang Blog</title>
+    <link>http://localhost:1313/tags/busuanzi/</link>
+    <description>Recent content in Busuanzi on Yang Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 25 Apr 2026 11:26:25 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/busuanzi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Enable PV Count</title>
+      <link>http://localhost:1313/posts/blog-1/</link>
+      <pubDate>Sat, 25 Apr 2026 11:26:25 +0800</pubDate>
+      <guid>http://localhost:1313/posts/blog-1/</guid>
+      <description>&lt;p&gt;由于静态网站的限制，在添加浏览量显示这类动态展示功能时，需要引入第三方服务。&lt;/p&gt;
+&lt;p&gt;此处，博主采用 &lt;a href=&#34;https://www.busuanzi.cc/&#34;&gt;busuanzi&lt;/a&gt; 作为提供商，优点是简单快捷，只需引入script脚本即可实现计数功能。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
