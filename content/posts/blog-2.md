@@ -1,7 +1,7 @@
 +++
 date = '2026-05-09T23:22:29+08:00'
 draft = false
-title = ’解决FinalShell文件上传失败‘
+title = '解决FinalShell文件上传失败的方法'
 tags = ['FinalShell']
 
 +++
