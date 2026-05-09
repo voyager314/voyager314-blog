@@ -2,19 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/tags/finalshell/</loc>
+    <lastmod>2026-05-09T23:22:29+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2026-05-09T23:22:29+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2026-05-09T23:22:29+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2026-05-09T23:22:29+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/blog-2/</loc>
+    <lastmod>2026-05-09T23:22:29+08:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/busuanzi/</loc>
     <lastmod>2026-04-25T11:26:25+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/blog-1/</loc>
-    <lastmod>2026-04-25T11:26:25+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2026-04-25T11:26:25+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2026-04-25T11:26:25+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/</loc>
     <lastmod>2026-04-25T11:26:25+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/test/</loc>

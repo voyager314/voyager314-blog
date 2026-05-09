@@ -6,8 +6,20 @@
     <description>Recent content on Yang Blog</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 25 Apr 2026 11:26:25 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 09 May 2026 23:22:29 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解决FinalShell文件上传失败的方法</title>
+      <link>http://localhost:1313/posts/blog-2/</link>
+      <pubDate>Sat, 09 May 2026 23:22:29 +0800</pubDate>
+      <guid>http://localhost:1313/posts/blog-2/</guid>
+      <description>&lt;h2 id=&#34;问题描述&#34;&gt;问题描述&lt;/h2&gt;
+&lt;p&gt;在使用FinalShell上传本地文件时出现上传失败的情况，如图：&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20260509233240765&#34; loading=&#34;lazy&#34; src=&#34;https://test-javaweb01.oss-cn-beijing.aliyuncs.com/BlogImages/image-20260509233240765.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;原因分析&#34;&gt;原因分析&lt;/h2&gt;
+&lt;p&gt;核心原因是连接账号的权限不足，非root用户无法上传文件。&lt;/p&gt;
+&lt;p&gt;于是更改为root用户：&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Enable PV Count</title>
       <link>http://localhost:1313/posts/blog-1/</link>

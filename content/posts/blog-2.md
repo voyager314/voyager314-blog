@@ -10,7 +10,7 @@ tags = ['FinalShell']
 
 在使用FinalShell上传本地文件时出现上传失败的情况，如图：
 
-![image-20260509233240765](./assets/image-20260509233240765.png)
+![image-20260509233240765](https://test-javaweb01.oss-cn-beijing.aliyuncs.com/BlogImages/image-20260509233240765.png)
 
 ## 原因分析
 
@@ -18,7 +18,7 @@ tags = ['FinalShell']
 
 于是更改为root用户：
 
-![image-20260509233616407](./assets/image-20260509233616407.png)
+![image-20260509233616407](https://test-javaweb01.oss-cn-beijing.aliyuncs.com/BlogImages/image-20260509233616407.png)
 
 但此处设置的前提是你已经设置了root密码。
 
@@ -43,7 +43,7 @@ tags = ['FinalShell']
 
 如图：
 
-![image-20260509235149542](./assets/image-20260509235149542.png)
+![image-20260509235149542](https://test-javaweb01.oss-cn-beijing.aliyuncs.com/BlogImages/image-20260509235149542.png)
 
 打开改配置文件，插入`PermitRootLogin yes`和`PasswordAuthentication yes`。
 
@@ -51,6 +51,6 @@ tags = ['FinalShell']
 
 使用root登录并上传：
 
-![image-20260509235459131](./assets/image-20260509235459131.png)
+![image-20260509235459131](https://test-javaweb01.oss-cn-beijing.aliyuncs.com/BlogImages/image-20260509235459131.png)
 
 成功🙌
